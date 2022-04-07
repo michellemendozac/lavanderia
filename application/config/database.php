@@ -75,7 +75,9 @@ $query_builder = TRUE;
  
 $db['default'] = array(
 	'dsn'	=> '', 
-	'hostname' => '153.92.220.1',
+ 
+	'hostname' => '194.5.156.126',
+ 
 	'username' => 'u902322845_michele',
 	'password' => 'Michel001.',
 	'database' => 'u902322845_express_plus',
@@ -97,9 +99,9 @@ $db['default'] = array(
 
 $db['test'] = array(
 	'dsn'	=> '', 
-	'hostname' => 'localhost',
+	'hostname' => '127.0.0.1:3306',
 	'username' => 'root',
-	'password' => 'Michel001',
+	'password' => '',
 	'database' => 'u902322845_express_plus',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

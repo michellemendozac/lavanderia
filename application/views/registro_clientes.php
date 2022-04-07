@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Registro de clientes</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
+ 
 <body>
 <?php
 	$nombre = "";
@@ -53,10 +46,33 @@
 	<?php }else{ ?>
 		<h2>Editar cliente</h2>
 	<?php } ?>
+	
+	
 
   <a href="<?=base_url()?>/Registroclientes/listado"><h4>Listado de clientes</h4> </a>
+  <br>
+      <div class="account-pages mb-16">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card">
 
-  <form id="cliente" method="POST">
+                            <!-- Logo -->
+                            <div class="card-header pt-4 pb-4 text-center bg-primary">
+                                <a href="index.html">
+                                    <span><img src="assets/images/logo.png" alt="" height="18"></span>
+                                </a>
+                            </div>
+
+                            <div class="card-body p-4">
+                                
+                                <div class="text-center w-75 m-auto">
+                                    <h4 class="text-dark-50 text-center mt-0 font-weight-bold">Agregar Clientes</h4>
+                                    <p class="text-muted mb-4"></p>
+                                </div>
+
+
+  <form id="cliente" method="POST" action="Registroclientes/nuevo">
     <div class="row">
     	<div class="col-md-6">
 		    <div class="form-group">
@@ -139,7 +155,7 @@
 	</div>
   
  	<?php if(!isset($cl)){ ?>
-		<button type="button" onclick="nuevo_cliente()" class="btn btn-success">Guardar</button>
+		<button type="submit" class="btn btn-success">Guardar</button>
 	<?php }else{ ?>
 		<button type="button" onclick="editar_cliente()" class="btn btn-success">Editar</button>
 	<?php } ?>

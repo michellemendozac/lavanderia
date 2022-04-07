@@ -3,7 +3,7 @@
     <div class="login-form col-12 col-sm-7">
         <div class="form-group mb-3 text-center">
             <p>Por favor introduzca su usuario y contraseña para acceder a la aplicación.</p>
-        </div>
+        </div> 
     
         <div class="form-group mb-3">
             <label for="emailaddress">Usuario</label> 
@@ -26,9 +26,7 @@
             <button class="btn btn-primary" type="button" onclick="login()"> Ingresar </button>
         </div>
         
-        <!-- <div class="mt-2"> ¿Olvidaste tu contraseña? 
-            <p> <a href="Login/PasswordRecovery">Recuperar Contraseña</a> </p>
-        </div> -->
+     
         
     </div>
 </form>

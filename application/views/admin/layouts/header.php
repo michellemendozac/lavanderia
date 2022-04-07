@@ -46,8 +46,8 @@
                                     <div class="media">
                                         <img src="/dist/images/author.jpg" alt="" class="d-flex mr-3 img-fluid rounded-circle">
                                             <div class="media-body">
-                                                <p class="mb-0">SEPROMEX</p>
-                                                <span class="text-success">Cambio de imagen.</span>
+                                                <p class="mb-0">EXPRESS PLUS</p>
+                                                <span class="text-success">IMAGEN</span>
                                             </div>
                                     </div>
                                 </a>
@@ -58,8 +58,8 @@
                                     <div class="media">
                                         <img src="/dist/images/author3.jpg" alt="" class="d-flex mr-3 img-fluid rounded-circle">
                                             <div class="media-body">
-                                            <p class="mb-0">SEPROMEX</p>
-                                                <span class="text-danger">Nuevo Software</span>
+                                            <p class="mb-0">EXPRESS PLUS</p>
+                                                <span class="text-danger">IMAGEN</span>
                                             </div>
                                     </div>
                                 </a>

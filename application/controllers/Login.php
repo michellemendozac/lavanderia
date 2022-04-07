@@ -3,30 +3,86 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 
- public function __construct()
- {
-  parent::__construct();
-  if($this->session->userdata('id'))
-  {
-   redirect('private_area');
-  }
- 
-  $this->load->library('form_validation');
- 
-  $this->load->model('Login_model');
- }
+    public function __construct()
+    {
+        parent::__construct();
+        //Hacerlo con un hook
+        /*if($this->session->userdata('id'))
+        {
+            redirect('private_area');
+        }*/  
 
- function index()
- {
- $this->load->view('page/layout/top');
-  $this->load->view('Login');
- }
+        $this->load->model('Login_model'); 
+    }
+ 
+    function index()
+    {
+        //Personalizar vista 
+        $custom = array("title" => "Login",
+                        "form"  => "admin/login/login",
+                        "text"  =>  "PAra cualquie duda enviar correo a ayuda@expressplus.com");     
+    
+        //Guardar variables
+        $data["custom"] = $custom;  
+        
 
+        //Cargar vista y enviamos la variable data
+        $this->load->view('admin/login/main_login',$data);
+    } 
+    
+
+    //Start session
+    public function start()
+	{
+        //Get data 
+        $usuario  = $_POST["user"];
+        //encriptar password
+        $password = $_POST["password"];
+ 
+        //Search user 
+        $user = $this->Login_model->check_login($usuario, $password);       
+    
+        //If user exist, save and return true
+        if($user){            
+            //Cargar catalogos
+            $this->load_system_data();
+            // Iniciar sesion
+            $this->init($user);          
+            echo "true"; 
+        }else{
+            echo "Error: Usuario o contraseña incorrecto.";
+        }
+
+    }
+
+
+    private function load_system_data(){       
+        //$data["catalog_name"] = $this->Login_model->funcion();
+
+        //$_SESSION["catalog"]    = $data;
+
+        //emergencial, comentar al agregar catalogos
+        $_SESSION["catalog"]   = [];
+    }
+    
+    //Save user in session 
+    private function init($user){
+        $login = array("id"      => $user["id_users"],                       
+                       "nombre"  => $user["name"],
+                       "email"   => $user["email"]);
+        $_SESSION["user"]  = $login;
+    }
+
+    //Close session
+    public function cerrar_session(){
+        session_destroy();
+        header('Location:/Login');
+    }
+
+
+    /*
  function validation()
- {     
- 
- 
- 
+ {       
   $this->form_validation->set_rules('user_email','Email Address', 'required|trim|valid_email');
   $this->form_validation->set_rules('user_password', 'Password', 'required');
  
@@ -47,7 +103,8 @@ class Login extends CI_Controller {
   {
    $this->index();
   }
- }
+ }*/
+
 
 }
 

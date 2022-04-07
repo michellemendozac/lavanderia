@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://lavanderiaexpressplus.com/';
+$config['base_url'] = 'http://localhost/lavanderia';
 
 /*
 |--------------------------------------------------------------------------
@@ -325,6 +325,7 @@ $config['cache_query_string'] = FALSE;
 |
 */
 $config['encryption_key'] = '1714520252';
+ 
 
 /*
 |--------------------------------------------------------------------------

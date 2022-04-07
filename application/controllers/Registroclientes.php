@@ -6,11 +6,16 @@ class Registroclientes extends CI_Controller {
 	public function __construct()
     {
     	parent::__construct();
+        //validate of users 
+    	 
         $this->load->model('Clientes_model');  
     }    
+ 
+ 
 
 	public function index()
 	{				
+	        $this->load->view('page/layout/top');
 		$this->load->view('registro_clientes');
 	} 
 

@@ -58,5 +58,8 @@ class Order extends CI_Controller {
 		header('Location: '.base_url().'/Registroclientes/listado');
 	}
 	
+	 
+
+	
 }
 ?>

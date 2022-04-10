@@ -76,7 +76,7 @@ class Login extends CI_Controller {
     //Close session
     public function cerrar_session(){
         session_destroy();
-        header('Location:/Login');
+                      redirect('login');
     }
 
 

@@ -43,6 +43,7 @@
 	<?php }else{ ?>
 		<h2>Editar Pedido</h2>
 	<?php } ?>
+  <a href="<?=base_url()?>/Login/cerrar_session"><h4>Salir</h4> </a>
 
   <a href="<?=base_url()?>/Admin/Order/order_list"><h4>Listado de Pedidos</h4> </a>
 

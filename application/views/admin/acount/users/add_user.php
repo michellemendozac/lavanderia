@@ -1,11 +1,6 @@
-<div class="modal-header">
-    <h5 class="modal-title">
-        <i class="icon-pencil"></i> Nuevo Usuario
-    </h5>     
-    <i class="icon-close icons openside reset_form h3" data-reset="reset_user"></i>     
-</div>
-<form class="add-contact-form needs-validation" id="user_newform" novalidate>
-    <div class="modal-body h-100">  
+ 
+  <form method="POST" id="add_user_form" >   
+   <div class="modal-body h-100">  
 
         <div class="row"> 
             <label for="newuser_username" class="col-form-label">Usuario</label>
@@ -21,7 +16,7 @@
 
         <div class="row"> 
             <label for="newuser_lastname" class="col-form-label">Apellido</label>
-            <input type="text" name="lastname" id="newuser_lastname" class="form-control" required="" >
+            <input type="text" name="last_name" id="newuser_lastname" class="form-control" required="" >
             <div class="invalid-feedback" id="feedback-newuser_lastname"></div>
         </div> 
 
@@ -33,18 +28,22 @@
 
         <div class="row"> 
             <label for="newuser_rolid" class="col-form-label">Rol de Usuario</label>
-            <select class="form-control" name="rolid" id="newuser_rolid" required="">
-                <option value="0">Selecciona un rol de usuario</option>
-                <?php foreach($rollist AS $datarol): ?> 
-                <option value="<?=$datarol->id_rol?>"><?=$datarol->rol?></option>
-                <?php endforeach; ?>                
-            </select>    
+                    <select class="form-control" name="rol" id="rol">
+            <?php 
+
+            foreach($roles as $row)
+            { 
+              echo '<option value="'.$row->id_rol.'">'.$row->name.'</option>';
+            }
+            ?>
+            </select>
+
             <div class="invalid-feedback" id="feedback-newuser_rolid"></div>        
         </div>
 
 
         <div class="row"> 
-            <label for="newuser_password" class="col-form-label">Contraseña</label>
+            <label for="newuser_password" class="col-form-label">Contraseña </label>
             <input type="text" name="password" id="newuser_password" class="form-control" required="" >
             <div class="invalid-feedback" id="feedback-newuser_pass"></div>
         </div>
@@ -58,6 +57,5 @@
     </div> 
     <div class="modal-footer">
         <button type="button" class="btn btn-danger openside reset_form" data-reset="reset_user" >Cancelar</button>
-        <button type="button" data-function="validate_user" class="btn btn-primary send_form">Agregar Usuario</button>
-    </div>
+            <button class="btn btn-primary" type="button" onclick="add_user()"  > Ingresar </button>
 </form>  

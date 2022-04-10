@@ -39,7 +39,7 @@
 <div class="container">
   
   <?php if(!isset($pe)){ ?>
-		<h2>Registro de Pedidos</h2>
+ 
 	<?php }else{ ?>
 		<h2>Editar Pedido</h2>
 	<?php } ?>

@@ -20,7 +20,7 @@ class Login extends CI_Controller {
         //Personalizar vista 
         $custom = array("title" => "Login",
                         "form"  => "admin/login/login",
-                        "text"  =>  "PAra cualquie duda enviar correo a ayuda@expressplus.com");     
+                        "text"  =>  "Bienvenido, por favor ingrese con sus datos");     
     
         //Guardar variables
         $data["custom"] = $custom;  

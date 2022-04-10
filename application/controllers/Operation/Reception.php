@@ -12,7 +12,19 @@ class Reception extends CI_Controller {
  
 	public function index() 
 	{				
-		$this->load->view('Operation/new');
+	
+        //Personalizar vista 
+        $custom = array("title" => "Pedidos",
+                        "form"  => "Operation/new",
+                        "text"  =>  "Bienvenido, panel de pedidos");     
+    
+        //Guardar variables
+        $data["custom"] = $custom;  
+        
+
+        //Cargar vista y enviamos la variable data
+        $this->load->view('admin/login/main_login',$data);
+ 
 	} 
 
     public function reception()

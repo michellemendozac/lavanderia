@@ -37,7 +37,7 @@ class Login extends CI_Controller {
         //Get data 
         $usuario  = $_POST["user"];
         //encriptar password
-        $password = $_POST["password"];
+        $password = md5($_POST["password"]);
  
         //Search user 
         $user = $this->Login_model->check_login($usuario, $password);       

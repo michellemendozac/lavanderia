@@ -49,7 +49,7 @@ if ($this->form_validation->run()) {
         'name'  => $_POST["name"],
         'last_name'  => $_POST["last_name"],
         'email'  => $_POST["email"],
-        'password' => $_POST["password"],
+        'password' => md5($_POST["password"]),
         'id_rol'  => $_POST["rol"],
         'status' => 1
 );

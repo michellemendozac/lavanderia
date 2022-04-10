@@ -44,18 +44,19 @@
 
         <div class="row"> 
             <label for="newuser_password" class="col-form-label">Contraseña </label>
-            <input type="text" name="password" id="newuser_password" class="form-control" required="" >
+            <input type="password" name="password" id="newuser_password" class="form-control" required="" >
             <div class="invalid-feedback" id="feedback-newuser_pass"></div>
         </div>
 
         <div class="row"> 
             <label for="confirmpassword" class="col-form-label">Confirma contraseña</label>
-            <input type="text" name="confirmpassword" id="newuser_confirmpassword" class="form-control" required="" >            
+            <input type="password" name="password1" id="newuser_confirmpassword" class="form-control" required="" >            
             <div class="invalid-feedback" id="feedback-newuser_confirmpass"></div>
         </div> 
 
     </div> 
     <div class="modal-footer">
-        <button type="button" class="btn btn-danger openside reset_form" data-reset="reset_user" >Cancelar</button>
+        <a type="button" class="btn btn-danger openside reset_form" data-reset="reset_user" href="<?=base_url()?>/">Salir</a>
+</button>
             <button class="btn btn-primary" type="button" onclick="add_user()"  > Ingresar </button>
 </form>  

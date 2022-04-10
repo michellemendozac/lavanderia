@@ -97,7 +97,7 @@
                     success: function (response) {  
                     console.log(response);                     
                         if (response.trim() == "true") {
-                            let timerInterval
+                            
 
                              window.location.href = "Operation/Reception";
                         } else {                            
@@ -124,14 +124,14 @@
                     url: "Register/start",
                     success: function (response) {  
                     console.log(response);                     
-                        if (response == true) {
+                       if (response.trim() == "true"){
  Swal.fire({
         icon: 'success',
         title: 'Perfecto, registro exitoso'
          
       }); 
 
-                             window.location.href = "login";
+                             window.location.href = "register";
                         }else {                            
  Swal.fire({
         icon: 'error',

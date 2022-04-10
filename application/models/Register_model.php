@@ -23,6 +23,26 @@ class Register_model extends CI_Model
 
         //echo 'Total Results: ' . $query->num_rows();
     }
+
+     public function check_email()
+   {
+         
+        /*
+        $query = $this->db->get('location');
+
+        foreach ($query->result() as $row)
+        {
+            echo $row->description;
+        }*/
+
+        $query = $this->db->query('SELECT email FROM users');
+
+
+        return $query->result();
+
+        //echo 'Total Results: ' . $query->num_rows();
+    }
+       
        
      
     
@@ -37,12 +57,7 @@ class Register_model extends CI_Model
   $query =  $this->db->insert('users', $data);
    
   $query = $this->db->insert_id();
-                 if(!$query){
-                      redirect('login');
-                   }
-                   else{
-                   redirect('Registration');
-                   }
+                 
             } 
  
   

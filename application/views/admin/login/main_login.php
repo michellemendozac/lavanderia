@@ -21,7 +21,7 @@
         <div class="account-pages mt-5 mb-5">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-7">
+                    <div class="col-lg-8">
                         <div class="card">
 
                             <!-- Logo -->
@@ -145,7 +145,45 @@
 
 </script>
             
-           
+
+
+<script>  
+function revisar_telefono(valor){
+  jQuery.ajax({ 
+            type: "POST",                    
+            data: $("#cliente").serialize(),       
+            url: "<?=base_url()?>/Registroclientes/revisar_telefono/"+valor+"/<?=$cliente_id?>", 
+            success: function(response) {                   
+                if(response != "1"){
+                  alert(response);
+                }
+            }  
+       });
+}
+
+function nuevo_cliente(){
+      jQuery.ajax({ 
+            type: "POST",                  
+            data: $("#cliente").serialize(),       
+            url: "<?=base_url()?>/Registroclientes/nuevo/", 
+            success: function(response) {                   
+                location.href = '<?=base_url()?>/Registroclientes/listado';               
+            }  
+       });
+}
+
+function editar_cliente(){
+  jQuery.ajax({ 
+            type: "POST",                  
+            data: $("#cliente").serialize(),       
+            url: "<?=base_url()?>/Registroclientes/editar_cliente_info/<?=$cliente_id?>/<?=$direccion_id?>", 
+            success: function(response) {                   
+                location.href = '<?=base_url()?>/Registroclientes/listado';               
+            }  
+       });
+}
+
+</script>             
         
       
 

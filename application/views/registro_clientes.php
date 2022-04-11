@@ -39,46 +39,27 @@
 	}
 
 ?>
-<div class="container">
+ 
   
   <?php if(!isset($cl)){ ?>
-		<h2>Registro de clientes</h2>
+ 
 	<?php }else{ ?>
 		<h2>Editar cliente</h2>
 	<?php } ?>
 	
 	
 
-  <a href="<?=base_url()?>/Registroclientes/listado"><h4>Listado de clientes</h4> </a>
+  <a href="<?=base_url()?>/listado"><h4>Listado de clientes</h4> </a>
   <br>
-      <div class="account-pages mb-16">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="card">
-
-                            <!-- Logo -->
-                            <div class="card-header pt-4 pb-4 text-center bg-primary">
-                                <a href="index.html">
-                                    <span><img src="assets/images/logo.png" alt="" height="18"></span>
-                                </a>
-                            </div>
-
-                            <div class="card-body p-4">
-                                
-                                <div class="text-center w-75 m-auto">
-                                    <h4 class="text-dark-50 text-center mt-0 font-weight-bold">Agregar Clientes</h4>
-                                    <p class="text-muted mb-4"></p>
-                                </div>
-
+       
 
   <form id="cliente" method="POST" action="Registroclientes/nuevo">
     <div class="row">
     	<div class="col-md-6">
-		    <div class="form-group">
+		     
 		      <label for="nombre">Nombre:</label>
 		      <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre" value="<?=$nombre?>">
-		    </div>
+		  
 
 		    <div class="form-group">
 		      <label for="amaterno">Apellido Materno:</label>
@@ -139,11 +120,16 @@
 
 		    <div class="form-group">
 		      <label for="municipio">Municipio:</label>
-		      <select class="form-control" id="municipio" name="municipio">
-		      	<option value="2" <?=($municipio=="1")?"selected":""?> >Guadajalara</option>
-		      	<option value="1" <?=($municipio=="1")?"selected":""?> >Zapopan</option>
-		      	
-		      </select>
+		            <select class="form-control" name="municipio" id="municipio">
+            <?php 
+
+            foreach($municipios as $row)
+            { 
+              echo '<option value="'.$row->id.'">'.$row->nombre.'</option>';
+            }
+            ?>
+            </select>
+
 		    </div>   
 
 		    <div class="form-group">
@@ -165,42 +151,4 @@
 </div>
 
 </body>
-</html>
-
-<script>  
-function revisar_telefono(valor){
-	jQuery.ajax({ 
-            type: "POST",                    
-            data: $("#cliente").serialize(),       
-            url: "<?=base_url()?>/Registroclientes/revisar_telefono/"+valor+"/<?=$cliente_id?>", 
-            success: function(response) {                   
-                if(response != "1"){
-                	alert(response);
-                }
-            }  
-       });
-}
-
-function nuevo_cliente(){
-      jQuery.ajax({ 
-            type: "POST",                  
-            data: $("#cliente").serialize(),       
-            url: "<?=base_url()?>/Registroclientes/nuevo/", 
-            success: function(response) {                   
-                location.href = '<?=base_url()?>/Registroclientes/listado';               
-            }  
-       });
-}
-
-function editar_cliente(){
-	jQuery.ajax({ 
-            type: "POST",                  
-            data: $("#cliente").serialize(),       
-            url: "<?=base_url()?>/Registroclientes/editar_cliente_info/<?=$cliente_id?>/<?=$direccion_id?>", 
-            success: function(response) {                   
-                location.href = '<?=base_url()?>/Registroclientes/listado';               
-            }  
-       });
-}
-
-</script>  
+</html> 

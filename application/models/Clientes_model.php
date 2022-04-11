@@ -2,6 +2,16 @@
 
 Class Clientes_model extends CI_Model {
 
+     public function check_mun() {
+     
+        $this->db->select('*');
+        $this->db->from('municipios');
+        $query = $this->db->get(); 
+        return $query->result();
+
+ 
+    }
+
 	public function nuevo_cliente($data){ 
         $this->db->insert('clientes',$data);
 		return $this->db->insert_id();
@@ -13,16 +23,18 @@ Class Clientes_model extends CI_Model {
         return $this->db->update('clientes',$data);		
     }
 
+    
     public function eliminar_cliente($id){
-        $this->db->where("id", $id);
-        return $this->db->delete('clientes');     
-    }
+    $this -> db -> where('id', $id);
+    $this -> db -> delete('clientes');
+}
+
     
     public function listado_cliente(){
-        $this->db->select('c.*, d.*, d.id direccion_id, m.nombre nmunicipio', 'left');
+        $this->db->select('c.*, d.*, m.nombre nmunicipio', 'left');
         $this->db->from('clientes c','left');
-        $this->db->join('cat_direcciones d', 'c.id = d.cliente_id','left');
-        $this->db->join('cat_municipios m', 'm.id = d.municipio', 'left');
+        $this->db->join('direcciones d', 'c.id = d.cliente_id','left');
+        $this->db->join('municipios m', 'm.id = d.municipio', 'left');
         $query = $this->db->get(); 
 
         if ($query->num_rows()>0) {  
@@ -48,8 +60,8 @@ Class Clientes_model extends CI_Model {
 	public function cliente_info($id){
 		$this->db->select('c.*, d.*, d.id direccion_id, m.nombre nmunicipio');        
         $this->db->from('clientes c','left');
-        $this->db->join('cat_direcciones d', 'c.id = d.cliente_id','left');
-        $this->db->join('cat_municipios m', 'm.id = d.municipio','left');
+        $this->db->join('direcciones d', 'c.id = d.cliente_id','left');
+        $this->db->join('municipios m', 'm.id = d.municipio','left');
 		$this->db->where('c.id',$id); 
         $query = $this->db->get();               
         if ($query->num_rows()>0) {  
@@ -61,13 +73,13 @@ Class Clientes_model extends CI_Model {
 
 
     public function nueva_direccion($data){
-        $this->db->insert('cat_direcciones',$data);
+        $this->db->insert('direcciones',$data);
 		return $this->db->insert_id();
     }
 
     public function edita_direccion($data,$id){
         $this->db->where("id", $id);
-        return $this->db->update('cat_direcciones',$data);		
+        return $this->db->update('direcciones',$data);		
     } 
 
 
@@ -82,8 +94,7 @@ Class Clientes_model extends CI_Model {
             return false; 
         } 
 	}
-
-
+ 
 
 }
 ?>

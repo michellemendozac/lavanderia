@@ -29,7 +29,7 @@ class Pedidos extends CI_Controller {
 		$this->load->view('admin/pedidos/pedido',$data);
 	} 
 
-/*
+
 	public function index()
 	{				
 		$this->load->view('registro_clientes');
@@ -80,35 +80,7 @@ class Pedidos extends CI_Controller {
     	}
     } 
 
-	public function nuevo(){			
-		$data = array("nombre"        => $_POST["nombre"],
-					  "amaterno"      => $_POST["amaterno"],
-					  "apaterno"      => $_POST["apaterno"],
-					  "telefono"      => $_POST["telefono"],
-					  "promedio_compra" => $_POST["promedio"],
-					  "correo"        => $_POST["correo"],
-					  "observaciones" => $_POST["obs"],
-					  "sucursal"      => "1",
-					  "estatus"       => "1");
-		$cliente_id = $this->Clientes_model->nuevo_cliente($data);
-
-		$data = array("calle"      => $_POST["calle"],
-					  "numero"     => $_POST["numero"],
-					  "cliente_id" => $cliente_id,
-					  "n_int"      => $_POST["numero_int"],
-					  "colonia"    => $_POST["colonia"],
-					  "municipio"  => $_POST["municipio"],
-					  "estado"     => "1",
-					  "pais"       => "1",
-					  "cp"         => $_POST["cp"]);
-
-		$direccion_id = $this->Clientes_model->nueva_direccion($data);
-		
-		$data = array("direccion"  => $direccion_id);
-		$this->Clientes_model->edita_cliente($data,$cliente_id); 
-	} 
-
-	*/
+	 
 	
 }
 ?>

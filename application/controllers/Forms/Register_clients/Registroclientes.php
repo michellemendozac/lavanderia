@@ -6,24 +6,39 @@ class Registroclientes extends CI_Controller {
 	public function __construct()
     {
     	parent::__construct();
+        //validate of users 
+    	 
         $this->load->model('Clientes_model');  
     }    
+ 
+ 
 
 	public function index()
-	{				
-		$this->load->view('registro_clientes');
-	} 
+	 {
+        //Personalizar vista 
+         $data["municipios"] = $this->Clientes_model->check_mun();
+
+        $custom = array("title" => "Registrar cliente",
+                        "form"  => "registro_clientes",
+                        "text"  =>  "Panel de registro");     
+    
+        //Guardar variables
+        $data["custom"] = $custom;  
+        //envio a la plantilla los datos de los roles
+ 
+        //Cargar vista y enviamos la variable data
+        $this->load->view('admin/login/main_login',$data);
+    } 
 
 	public function editar_cliente($id){
 		$data["cl"] = $this->Clientes_model->cliente_info($id);		 
-		$this->load->view('registro_clientes',$data);
+		$this->load->view(' ',$data);
 	} 
 
-	public function eliminar_cliente($id){
-		$this->Clientes_model->eliminar_cliente($id);
-		header('Location: '.base_url().'/Registroclientes/listado');
-	}
-    
+public function eliminar_cliente($user_id) {   
+        $this->load->model('Clientes_model');  
+    $this->Clientes_model->eliminar_cliente($user_id);
+} 
 
     public function editar_cliente_info($id,$direccion_id){
 		$data = array("nombre"        => $_POST["nombre"],

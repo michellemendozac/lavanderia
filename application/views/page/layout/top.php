@@ -28,11 +28,13 @@
 
     </head>
       <!-- preloader -->
+       <!-- Pre-loader -->
         <div id="preloader">
-            <div class="preloader">
-                <span></span>
-                <span></span>
+            <div id="status">
+                <div class="bouncing-loader"><div ></div><div ></div><div ></div></div>
             </div>
+        </div>
+        <!-- End Preloader-->
         </div>
         <!-- preloader end  -->
 
@@ -150,142 +152,7 @@
                             <div class="app-search">
                                 <span><i  class="uil-phone-alt mr-1"></i> 33 1250 1534 </span> 
                                 
-                            </div>  <div class="">
-                                                          
-  <a class="iconito icon-facebook" href="https://www.facebook.com/busgosuweb/"><span class="fa fa-facebook"></span></a>
-  <a class="iconito icon-gplus" href="https://plus.google.com/b/107517218199257548696/"><span class="fa fa-google"></span></a><a class="iconito icon-twitter" href="https://twitter.com/busgosuweb"><span class="fa fa-twitter"></span></a> <a class="iconito icon-rss" href="http://feeds.feedburner.com/busgosu"><i class="fa fa-instagram"></i></a> 
-                            </div>
-                             
-                             <style>
- 
-.iconito {
-  display: inline-block;
-  font-size: 25px;
-  line-height: 25px;
-  height: 25px;
-  width: 25px;
-  margin-right: 0px;
-  color: #4099ff;
-  border-radius: 100%;
-  position: relative;
-}
-.iconito::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border-radius: 100%;
-  background: #fff;
-  z-index: -1;
-}
-.iconito::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  vertical-align: middle;
-  width: 100%;
-  height: 100%;
-  transform: scale(0);
-  background: #4099ff;
-  border-radius: 100%;
-  z-index: -1;
-}
-.iconito:hover {
-  animation-name: bubble2;
-  animation-duration: 0.5s;
-  animation-delay: 0.1s;
-  animation-fill-mode: forwards;
-}
-.iconito:hover::after {
-  animation-name: bubble;
-  animation-duration: 0.5s;
-  animation-fill-mode: forwards;
-}
-.icon-twitter {
-  color: #4099ff;
-}
-.icon-twitter::after {
-  background: #4099ff;
-}
-.icon-facebook {
-  color: #3b5998;
-}
-.icon-facebook::after {
-  background: #3b5998;
-}
-
-.icon-gplus {
-  color: #dc4e41;
-}
-.icon-gplus::after {
-  background: #dc4e41;
-} 
-.icon-rss {
-  color: #ed2dc7;
-}
-.icon-rss::after {
-  background: #ed2dc7;
-}
-.icon-wrapper-editor {
-    display:none;
-}
-.icon-wrapper:hover > .text-wrapper {
-    font-weight:bold;
-    -webkit-transform: translate(0, -12px);
-    -moz-transform: translate(0, -12px);
-    -ms-transform: translate(0, -12px);
-    -o-transform: translate(0, -12px);
-    transform: translate(0, -12px);
-}
-
-@-moz-keyframes bubble {
-  100% {
-    transform: scale(1);
-  }
-}
-@-webkit-keyframes bubble {
-  100% {
-    transform: scale(1);
-  }
-}
-@-o-keyframes bubble {
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes bubble {
-  100% {
-    transform: scale(1);
-  }
-}
-@-moz-keyframes bubble2 {
-  100% {
-    color: #fff;
-  }
-}
-@-webkit-keyframes bubble2 {
-  100% {
-    color: #fff;
-  }
-}
-@-o-keyframes bubble2 {
-  100% {
-    color: #fff;
-  }
-}
-@keyframes bubble2 {
-  100% {
-    color: #fff;
-  }
-}
-</style> 
-                        </div>
+                            </div>              </div>
                     </div>
                     <!-- end Topbar -->
 

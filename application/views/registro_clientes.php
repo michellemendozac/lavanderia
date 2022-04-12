@@ -48,7 +48,8 @@
 	<?php } ?>
 	
 	
-
+Login
+  <a href="<?=base_url()?>/Login/cerrar_session"><h4>Cerrar sesion</h4> </a>
   <a href="<?=base_url()?>/listado"><h4>Listado de clientes</h4> </a>
   <br>
        

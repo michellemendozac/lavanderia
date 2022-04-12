@@ -99,7 +99,7 @@
                         if (response.trim() == "true") {
                             
 
-                             window.location.href = "Operation/Reception";
+                             window.location.href = "register_clients";
                         } else {                            
  Swal.fire({
         icon: 'error',
